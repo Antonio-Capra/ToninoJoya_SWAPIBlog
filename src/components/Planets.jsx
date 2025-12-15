@@ -6,7 +6,7 @@ export const Planets = () => {
 
     const { store, dispatch } = useGlobalReducer();
 
-    const { planets } = store
+    const { planets = [] } = store
 
      const handleOnClick = (planetaId) => {
         const planetaEncontrado = planets.find(planeta => planeta._id == planetaId);
@@ -29,6 +29,15 @@ export const Planets = () => {
         });
     };
 
+    if (!planets || planets.length === 0) {
+        return (
+            <div className="container mt-5">
+                <h2 className="text-danger">Planets</h2>
+                <p className="text-center" style={{ color: '#666' }}>Cargando planetas...</p>
+            </div>
+        );
+    }
+
     return (
         <div className="container mt-5">
             <h2 className="text-danger">Planets</h2>
@@ -36,7 +45,7 @@ export const Planets = () => {
                 {
                     planets.map((item) => {
                         return (
-                            <div className="card me-3 flex-shrink-0">
+                            <div className="card me-4 flex-shrink-0" key={item._id}>
                                 <img src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/public/images/planets/${item.uid}.jpg`} className="card-img-top" alt={item.properties.name} />
                                 <div className="card-body">
                                     <h5 className="card-title">{item.properties.name}</h5>

@@ -1,50 +1,86 @@
-# WebApp Template with React JS
+# ⭐ Star Wars Universe Explorer
 
+## Descripción del Proyecto
 
-Used by 4Geeks.com and 4Geeks Academy students, this template helps to bootstrap your first multi-page web applications by integrating with React latest version, vercel deployments and [Vite](https://4geeks.com/lesson/intro-to-vite-module-bundler) for bundling.
+**Star Wars Universe Explorer** es una aplicación web desarrollada con **React JS** y **Vite** con el objetivo educativo de **consumir una API externa** (SWAPI - Star Wars API). 
 
-### Getting stated:
+Este proyecto demuestra cómo:
+- 🔌 Conectarse y consumir datos de una API REST externa
+- 📱 Construir una interfaz moderna y responsiva
+- 💾 Gestionar estado global con Context API y useReducer
+- ⭐ Implementar funcionalidades como favoritos y búsqueda
+- 🎨 Aplicar diseño minimalista y elegante
 
-> 📦 Make sure you are using at least node version 20.
+### Características Principales
 
-1. Install the node package dependencies by typing: `$ npm install`
+- **Exploración de personajes**: Visualiza todos los personajes de Star Wars
+- **Exploración de planetas**: Descubre los mundos del universo Star Wars
+- **Detalles completos**: Accede a información detallada de cada personaje y planeta
+- **Sistema de favoritos**: Guarda tus personajes y planetas favoritos
+- **Diseño responsive**: Funciona perfectamente en dispositivos móviles y desktop
 
-2. Create a .env file by typing `$ cp .env.example .env`
+---
 
-3. Start coding! and the vite dev server with live reload by typing: `$ npm run start`
+## Getting Started
 
+> 📦 Asegúrate de usar Node.js versión 20 o superior.
 
-### Styling
+1. Instala las dependencias:
+   ```bash
+   npm install
+   ```
 
-You can update the `./index.css` or create new `.css` files and import them into your current css or js files depending on your needs.
+2. Crea un archivo `.env`:
+   ```bash
+   cp .env.example .env
+   ```
 
-### Components
+3. Inicia el servidor de desarrollo:
+   ```bash
+   npm run start
+   ```
 
-Add more files into your `./src/components` or styles folder as you need them and import them into your current files as needed.
+---
 
-💡Note: There is an example using the Context API inside `pages/demo.js`;
+## 🏗️ Estructura del Proyecto
 
-### Pages
+```
+src/
+├── components/        # Componentes reutilizables
+├── pages/            # Páginas principales
+├── hooks/            # Custom hooks (useGlobalReducer)
+├── services/         # Servicios para consumir APIs
+├── store.js          # Estado global con useReducer
+├── routes.jsx        # Configuración de rutas
+└── index.css         # Estilos globales
+```
 
-Add more files into your `./js/pages` and import them in `./routes.jsx`.
-Each page must match at least one route inside `routes.jsx`
+## 🎓 Conceptos Educativos
 
-### Centralized Store with useReducer
+Este proyecto enseña:
 
-This template comes with a centralized & general state that's shared with all pages and compoentes, we call it "the store".   
+- **Consumo de APIs REST**: Cómo hacer fetch a datos externos
+- **Gestión de Estado**: Usar Context API y useReducer
+- **React Hooks**: useState, useEffect, useContext
+- **Componentes Funcionales**: Arquitectura moderna de React
+- **Routing**: Navegación con React Router
+- **Diseño Responsivo**: Mobile-first con CSS moderno
 
-The file `./src/store.js` has a default structure for the store, we encourage you to change it and adapt it to your data needs (for example, if you are doing a `Todo list` you will probably have a array of todos here).
+## 🔗 API Utilizada
 
-+ Learn [how the useReducer works](https://4geeks.com/lesson/optimize-react-components-usereducer).
-+ Read more about [implementing a global state with Context API](https://4geeks.com/lesson/context-api)
-+ Read more about [react hooks](https://content.breatheco.de/lesson/react-hooks-explained)
+[SWAPI - Star Wars API](https://swapi.tech/) - Una API gratuita con datos de Star Wars
 
-The store `Provider` for this context is already set on `./src/main.jsx`. You can access the store from any component using the `useGlobalReducer` hook to get the `store` and `dispatcher`. Check `/views/demo.js` to see a demo. Here is a smaller sample:
+## 🎨 Tecnologías
 
-```jsx
-import useGlobalReducer from "./src/hooks/useGlobalReducer";
+- **React 18+** - Librería UI
+- **Vite** - Bundler rápido
+- **React Router** - Enrutamiento
+- **Bootstrap 5** - Framework CSS
+- **Font Awesome** - Iconos
 
-const MyComponentSuper = () => {
+## 📝 Licencia
+
+Este es un proyecto educativo de 4Geeks Academy
   //here you use the hook to get dispatcher and store
   import { dispatch, store } = useGlobalReducer();
 

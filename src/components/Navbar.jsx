@@ -29,19 +29,26 @@ export const Navbar = () => {
 							Favorites <span className="badge text-bg-secondary">{favorites.length}</span> 
 						</button>
 						<ul className="dropdown-menu">
-							{ favorites.length == 0 ?   <li className="text-center">(empty)</li>:
+							{ favorites.length == 0 ? (
+								<li className="text-center p-4">
+									<div className="mb-3">
+										<i className="fa-regular fa-bookmark" style={{ fontSize: '2rem', color: '#ddd' }}></i>
+									</div>
+									<span className="text-muted">No hay favoritos aún</span>
+								</li>
+							) : (
 								favorites.map((item, index) => {
 									return (<li className="p-2 d-flex justify-content-between"
 												key={index}>{item}
 										<span className="btn"
 											onClick={(event) => deleteFavorites(index, event)}
 										>
-											<i class="fa-solid fa-trash"></i>
+											<i className="fa-solid fa-trash"></i>
 										</span>
 									</li>
 									)
 								})
-							}
+							)}
 						</ul>
 					</div>
 				</div>

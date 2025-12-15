@@ -9,7 +9,7 @@ export const Home = () => {
 
 	const { store, dispatch } = useGlobalReducer()
 
-	const { characters, favorites } = store
+	const { characters = [], favorites } = store
 
 const handleOnClick = (characterId) => {
 
@@ -39,13 +39,12 @@ const handleOnClick = (characterId) => {
 		<>
 			<div className="container mt-5">
 				<h2 className="text-danger">Characters</h2>
-				<div className="d-flex flex-row flex-nowrap overflow-auto py-3">
-					{
-						characters.map((item) => {
-							return (
-								<>
-
-									<div className="card me-3 flex-shrink-0"
+				{characters && characters.length > 0 ? (
+					<div className="d-flex flex-row flex-nowrap overflow-auto py-3">
+						{
+							characters.map((item) => {
+								return (
+									<div className="card me-4 flex-shrink-0"
 										key={item._id}>
 										<img src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/public/images/people/${item.uid}.jpg`} className="card-img-top" alt={item.properties.name} />
 										<div className="card-body">
@@ -63,13 +62,13 @@ const handleOnClick = (characterId) => {
 										</div>
 
 									</div>
-								</>
-							)
-						})
-					};
-				</div>
-
-
+								)
+							})
+						}
+					</div>
+				) : (
+					<p className="text-center" style={{ color: '#666' }}>Cargando personajes...</p>
+				)}
 			</div >
 			<Planets />
 		</>

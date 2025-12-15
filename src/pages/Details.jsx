@@ -58,18 +58,19 @@ export const Details = () => {
     return (
         <div className="container">
             <div className="row mt-5">
-                <div className="col-12 d-flex justify-content-center">
-
+                <div className="col-lg-4 col-12 mb-4 mb-lg-0">
                     <img
                         src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/public/images/people/${characterDetail.uid}.jpg`}
-                        className="img-fluid w-75"
+                        className="img-fluid"
                         alt={characterDetail.properties.name}
+                        style={{ borderRadius: '16px', width: '100%' }}
                     />
-                    <div className="p-5">
+                </div>
+                <div className="col-lg-8 col-12">
+                    <div className="details-content">
                         <h1>{characterDetail.properties.name}</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, debitis. Eligendi accusantium maiores pariatur sed dolores dicta repellendus dolorem debitis laboriosam voluptatum excepturi, eveniet labore culpa quis doloremque facere exercitationem commodi blanditiis minima adipisci aperiam neque id. Et debitis sapiente voluptatibus placeat, enim error aut veritatis quibusdam, dignissimos molestias nemo?</p>
                     </div>
-
                 </div>
             </div>
             <div className="container text-center mt-5 border-top border-danger">
